@@ -5,6 +5,7 @@ import { MessageCircle, CheckCircle, ArrowRight, ShieldCheck, TrendingUp } from 
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
+import { getAssetPath } from "@/lib/utils"
 
 export function HeroSection() {
   return (
@@ -116,7 +117,7 @@ export function HeroSection() {
               {/* Main Image Container */}
               <div className="relative w-full h-full rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white dark:border-white/10">
                 <Image
-                  src="/hero-family.png"
+                  src={getAssetPath("/hero-family.png")}
                   alt="Happy Nepali Family Planning Finances"
                   fill
                   className="object-cover"

@@ -6,6 +6,7 @@ import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X, Phone, ShieldCheck, Sparkles, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { getAssetPath } from "@/lib/utils"
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -42,8 +43,8 @@ export function Navigation() {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled || isOpen
-          ? "bg-[#0B1120]/90 backdrop-blur-xl border-b border-white/10 py-3 shadow-lg shadow-black/5"
-          : "bg-transparent py-6 border-b border-transparent"
+        ? "bg-[#0B1120]/90 backdrop-blur-xl border-b border-white/10 py-3 shadow-lg shadow-black/5"
+        : "bg-transparent py-6 border-b border-transparent"
         }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -53,7 +54,7 @@ export function Navigation() {
           <Link href="/" className="group relative flex items-center gap-3">
             <div className="relative w-14 h-14 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center overflow-hidden p-0.5 shadow-lg shadow-black/5 group-hover:scale-105 transition-transform duration-300">
               <Image
-                src="/logo.jpeg"
+                src={getAssetPath("/logo.jpeg")}
                 alt="NavaGanga Logo"
                 width={56}
                 height={56}

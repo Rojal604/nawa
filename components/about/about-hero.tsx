@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { Droplets, Users, ShieldCheck } from "lucide-react"
 import Image from "next/image"
+import { getAssetPath } from "@/lib/utils"
 
 export function AboutHero() {
   return (
@@ -60,7 +61,7 @@ export function AboutHero() {
           >
             <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white dark:border-white/10 aspect-[4/3] lg:aspect-square">
               <Image
-                src="/about-consultation.png"
+                src={getAssetPath("/about-consultation.png")}
                 alt="Professional Financial Consultation at NavaGanga"
                 fill
                 className="object-cover"

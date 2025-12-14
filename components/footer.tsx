@@ -4,6 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Phone, MessageCircle, Mail, MapPin, Facebook, Linkedin, Instagram, ArrowRight, Sparkles } from "lucide-react"
 import { motion } from "framer-motion"
+import { getAssetPath } from "@/lib/utils"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -61,7 +62,7 @@ export function Footer() {
                 <div className="relative">
                   <div className="w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center overflow-hidden p-1">
                     <Image
-                      src="/logo.jpeg"
+                      src={getAssetPath("/logo.jpeg")}
                       alt="NavaGanga Financial Consultancy Logo"
                       width={64}
                       height={64}
