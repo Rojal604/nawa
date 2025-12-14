@@ -105,10 +105,10 @@ export function Navigation() {
               <span>985-766-8986</span>
             </a>
             <Button size="sm" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold shadow-lg shadow-accent/20 hover:shadow-accent/40 rounded-full px-6 transition-all hover:scale-105">
-              <a href="/fhc" className="gap-2">
+              <Link href="/fhc" className="gap-2">
                 <ShieldCheck className="w-4 h-4" />
                 Free Check-up
-              </a>
+              </Link>
             </Button>
           </div>
 
@@ -162,9 +162,9 @@ export function Navigation() {
                   className="pt-6 mt-4 border-t border-white/10 grid gap-4"
                 >
                   <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold h-14 rounded-2xl text-lg shadow-lg shadow-accent/20">
-                    <a href="/fhc">
+                    <Link href="/fhc">
                       Get Protected Now
-                    </a>
+                    </Link>
                   </Button>
                   <Button variant="outline" asChild className="w-full bg-transparent border-white/10 text-white hover:bg-white/5 h-14 rounded-2xl text-base">
                     <a href="tel:+9779857668986" className="gap-2">
