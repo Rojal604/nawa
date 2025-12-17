@@ -14,8 +14,8 @@ export function FounderStory() {
 
                 <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
                     {/* Photo */}
-                    <div className="relative mx-auto lg:mx-0">
-                        <div className="w-full max-w-md aspect-[3/4] rounded-3xl overflow-hidden border-4 border-white/10 relative shadow-2xl">
+                    <div className="relative mx-auto lg:mx-0 w-full max-w-md">
+                        <div className="relative rounded-3xl overflow-hidden border-4 border-white/10 shadow-2xl aspect-[3/4] w-full">
                             <Image src={getAssetPath("/founder-professional.png")} alt="Founder of NavaGanga" fill className="object-cover" />
                         </div>
                         <div className="absolute -bottom-4 right-4 sm:-bottom-6 sm:-right-6 w-40 sm:w-48 bg-accent/95 backdrop-blur shadow-xl p-4 sm:p-6 rounded-2xl border border-white/10">
