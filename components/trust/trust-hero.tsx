@@ -36,7 +36,7 @@ const recentReviews = [
 
 export function TrustHero() {
   return (
-    <section className="relative bg-primary text-primary-foreground pt-20 pb-0 overflow-hidden">
+    <section className="relative bg-primary text-primary-foreground pt-32 sm:pt-28 lg:pt-24 pb-0 overflow-hidden">
       {/* Background Ambience */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-[100px] pointer-events-none" />
@@ -65,12 +65,12 @@ export function TrustHero() {
               <span className="text-sm font-medium text-primary-foreground/90 pl-1">Pokhara's Most Trusted Team</span>
             </div>
 
-            <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-7xl leading-[1.1] mb-6">
-              Built on <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-white">Trust,</span><br />
+            <h1 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl lg:text-7xl leading-[1.1] mb-6">
+              Built on <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-white">Trust,</span><br className="hidden sm:block" />
               Grow on <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-white">Results.</span>
             </h1>
 
-            <p className="text-lg text-primary-foreground/70 mb-8 leading-relaxed max-w-xl">
+            <p className="text-base sm:text-lg text-primary-foreground/70 mb-8 leading-relaxed max-w-xl">
               We don't measure success by policies sold, but by families protected. Explore the stories that define our legacy.
             </p>
 

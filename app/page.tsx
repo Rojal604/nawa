@@ -1,10 +1,10 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { HeroSection } from "@/components/home/hero-section"
-import { HowItWorks } from "@/components/home/how-it-works"
-import { WhyNavaGanga } from "@/components/home/why-navaganga"
+import { TrustBoosters } from "@/components/home/trust-boosters"
+import { OffersSection } from "@/components/home/offers-section"
 import { ServicesSection } from "@/components/home/services-section"
-import { CTASection } from "@/components/home/cta-section"
+import { IntroVideo } from "@/components/home/intro-video"
 
 export default function HomePage() {
   return (
@@ -12,10 +12,10 @@ export default function HomePage() {
       <Navigation />
       <main>
         <HeroSection />
-        <HowItWorks />
-        <WhyNavaGanga />
+        <TrustBoosters />
+        <OffersSection />
         <ServicesSection />
-        <CTASection />
+        <IntroVideo />
       </main>
       <Footer />
     </>

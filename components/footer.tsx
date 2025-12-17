@@ -38,7 +38,7 @@ export function Footer() {
   ]
 
   return (
-    <footer className="relative bg-gradient-to-br from-[#0A1628] via-[#0D1B2E] to-[#0A1628] text-white">
+    <footer className="relative bg-gradient-to-br from-[#0A1628] via-[#0D1B2E] to-[#0A1628] text-white pb-24 lg:pb-0">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] animate-pulse" />
@@ -288,6 +288,8 @@ export function Footer() {
         >
           <p className="text-[10px] text-white/30 text-center leading-relaxed max-w-4xl mx-auto">
             Insurance and mutual fund investments are subject to market risks. Please read all scheme-related documents carefully before investing. Past performance is not indicative of future returns.
+            <br />
+            <span className="opacity-60 block mt-2">IRDAI Registration No: [Pending] | ARN: [Pending] </span>
           </p>
         </motion.div>
       </div>

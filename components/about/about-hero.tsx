@@ -7,7 +7,7 @@ import { getAssetPath } from "@/lib/utils"
 
 export function AboutHero() {
   return (
-    <section className="relative py-24 bg-gradient-to-br from-secondary via-background to-secondary/50 overflow-hidden">
+    <section className="relative py-32 sm:py-28 lg:py-24 bg-gradient-to-br from-secondary via-background to-secondary/50 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-30 dark:opacity-5" />
 
@@ -20,34 +20,36 @@ export function AboutHero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 text-accent px-4 py-1.5 rounded-full mb-8">
+            <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 text-accent px-5 py-2.5 rounded-full mb-8">
               <Droplets className="w-4 h-4" />
-              <span className="text-sm font-semibold tracking-wide uppercase">Our Story</span>
+              <span className="text-sm font-semibold tracking-wide uppercase">Financial Doctors</span>
             </div>
 
-            <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl text-foreground mb-6 leading-tight text-balance">
-              Building Wealth, <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent/70">Building Trust.</span>
+            <h1 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-foreground mb-6 leading-tight text-balance">
+              We are Financial Doctors for Families in <br className="hidden sm:block" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent/70">Pokhara.</span>
             </h1>
 
-            <p className="text-muted-foreground text-lg sm:text-x l leading-relaxed mb-8 max-w-lg">
-              <strong className="text-foreground">NavaGanga</strong> means "new flow." Just as a river flows steadily to nourish the land, we provide the steady financial guidance needed to nourish your family's future.
+            <p className="text-muted-foreground text-base sm:text-lg md:text-xl leading-relaxed mb-8 max-w-lg">
+              Insurance + Mutual Funds + Health + Retirement.
+              <br />
+              <span className="text-foreground font-medium mt-2 block">We diagnose before we prescribe.</span>
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 border-t border-border pt-8">
+              <div>
+                <h3 className="font-bold text-2xl text-foreground">5+</h3>
+                <p className="text-sm text-muted-foreground">Years Experience</p>
+              </div>
+              <div className="hidden sm:block w-px bg-border h-12" />
               <div>
                 <h3 className="font-bold text-2xl text-foreground">500+</h3>
                 <p className="text-sm text-muted-foreground">Families Served</p>
               </div>
               <div className="hidden sm:block w-px bg-border h-12" />
               <div>
-                <h3 className="font-bold text-2xl text-foreground">₹20Cr+</h3>
-                <p className="text-sm text-muted-foreground">Assets Advised</p>
-              </div>
-              <div className="hidden sm:block w-px bg-border h-12" />
-              <div>
-                <h3 className="font-bold text-2xl text-foreground">100%</h3>
-                <p className="text-sm text-muted-foreground">Claims Settle Ratio</p>
+                <h3 className="font-bold text-2xl text-foreground">4.9/5</h3>
+                <p className="text-sm text-muted-foreground">Google Rating</p>
               </div>
             </div>
           </motion.div>

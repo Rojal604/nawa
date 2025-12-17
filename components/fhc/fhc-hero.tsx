@@ -5,7 +5,7 @@ import { Stethoscope, Clock, CheckCircle2, Shield, TrendingUp, Activity, ArrowRi
 
 export function FHCHero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-primary text-primary-foreground py-20 lg:py-0">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-primary text-primary-foreground pt-28 pb-20 lg:py-20">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-accent/20 via-transparent to-transparent opacity-60" />
       <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-primary to-transparent" />
@@ -36,12 +36,12 @@ export function FHCHero() {
 
             {/* Headline */}
             <div className="space-y-4">
-              <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-7xl leading-[1.1]">
-                Is Your Wealth <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-white">Medically Fit?</span>
+              <h1 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl lg:text-7xl leading-[1.1]">
+                Take the First Step to <br className="hidden sm:block" />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-white">Financial Immunity.</span>
               </h1>
-              <p className="text-lg sm:text-xl text-primary-foreground/70 leading-relaxed max-w-xl">
-                Before prescribing any financial product, we diagnose. Get a comprehensive 10-point check-up without the sales pressure.
+              <p className="text-base sm:text-lg md:text-xl text-primary-foreground/70 leading-relaxed max-w-xl">
+                Get your comprehensive <strong>Financial Health Report Card</strong> (Worth ₹5,000) for FREE. Diagnose gaps before they become emergencies.
               </p>
             </div>
 

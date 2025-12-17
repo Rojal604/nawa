@@ -433,7 +433,7 @@ export function FHCForm() {
                         </div>
 
                         <div className="pt-6 border-t border-border">
-                          <div className="bg-secondary/30 p-4 rounded-xl flex items-start space-x-3 cursor-pointer" onClick={() => updateFormData("whatsappConsent", !formData.whatsappConsent)}>
+                          <div className="bg-secondary/30 p-4 rounded-xl flex items-start space-x-3">
                             <Checkbox
                               id="whatsapp-consent"
                               checked={formData.whatsappConsent}

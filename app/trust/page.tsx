@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { TrustHero } from "@/components/trust/trust-hero"
+import { TrustBadges } from "@/components/trust/trust-badges"
 import { TestimonialsGrid } from "@/components/trust/testimonials-grid"
 import { ClaimStories } from "@/components/trust/claim-stories"
 
@@ -16,6 +17,7 @@ export default function TrustPage() {
       <Navigation />
       <main className="pt-20">
         <TrustHero />
+        <TrustBadges />
         <TestimonialsGrid />
         <ClaimStories />
       </main>

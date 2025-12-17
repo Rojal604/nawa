@@ -9,7 +9,7 @@ import { getAssetPath } from "@/lib/utils"
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-20 lg:pt-0">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-32 sm:pt-28 lg:pt-20">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-background" />
       <div className="absolute top-0 right-0 w-2/3 h-full bg-secondary/30 -skew-x-12 translate-x-1/3 hidden lg:block" />
@@ -19,13 +19,13 @@ export function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
 
           {/* Left Column: Content */}
-          <div className="max-w-2xl mx-auto lg:mx-0 text-center lg:text-left pt-10 lg:pt-0">
+          <div className="max-w-2xl mx-auto lg:mx-0 text-center lg:text-left pt-4 lg:pt-0">
             {/* Badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 bg-white/80 dark:bg-white/10 backdrop-blur-sm border border-accent/20 text-accent px-4 py-1.5 rounded-full mb-8 shadow-sm"
+              className="inline-flex items-center gap-2 bg-accent/10 backdrop-blur-sm border border-accent/20 text-accent px-5 py-2.5 rounded-full mb-8"
             >
               <CheckCircle className="w-4 h-4 text-accent" />
               <span className="text-sm font-semibold tracking-wide uppercase">Trusted by 500+ Families</span>
@@ -38,9 +38,9 @@ export function HeroSection() {
               transition={{ duration: 0.7, delay: 0.1 }}
               className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] mb-6 tracking-tight text-foreground"
             >
-              Secure Your Family's <br className="hidden lg:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-                Financial Future
+              Trusted Financial Doctor for Families in
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent block mt-2">
+                Pokhara.
               </span>
             </motion.h1>
 
@@ -49,10 +49,9 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="font-sans text-lg sm:text-xl text-muted-foreground mb-10 leading-relaxed max-w-lg mx-auto lg:mx-0"
+              className="font-heading font-medium text-xl sm:text-2xl text-muted-foreground mb-10 leading-relaxed max-w-lg mx-auto lg:mx-0"
             >
-              Expert guidance on Insurance, SIPs, and Retirement Planning in Pokhara.
-              <span className="block mt-2 font-medium text-foreground/80">Diagnose First. Plan Right. Protect Always.</span>
+              Insurance + Mutual Fund + Health + Retirement.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -68,20 +67,9 @@ export function HeroSection() {
                 className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-white font-semibold px-8 h-14 text-lg rounded-xl shadow-lg shadow-accent/25 hover:shadow-xl hover:shadow-accent/40 transition-all hover:-translate-y-0.5"
               >
                 <Link href="/fhc" className="flex items-center justify-center gap-2">
-                  Free Health Check-up
+                  Book Free Financial Health Check-up
                   <ArrowRight className="w-5 h-5" />
                 </Link>
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                asChild
-                className="w-full sm:w-auto h-14 px-8 text-lg rounded-xl border-input hover:bg-secondary/50 hover:text-foreground transition-all"
-              >
-                <a href="https://wa.me/9779847668986" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
-                  <MessageCircle className="w-5 h-5 text-green-600" />
-                  Chat on WhatsApp
-                </a>
               </Button>
             </motion.div>
 
@@ -98,7 +86,7 @@ export function HeroSection() {
               </div>
               <div className="flex items-center gap-2">
                 <TrendingUp className="w-5 h-5 text-accent" />
-                <span>Data-Driven Advice</span>
+                <span>Why Diagnosis First?</span>
               </div>
             </motion.div>
           </div>

@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/nava-ganga-financial-consultancy',
   typescript: {
     ignoreBuildErrors: true,
   },

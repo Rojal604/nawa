@@ -1,7 +1,9 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
-import { FHCForm } from "@/components/fhc/fhc-form"
 import { FHCHero } from "@/components/fhc/fhc-hero"
+import { WhatYouGet } from "@/components/fhc/what-you-get"
+import { FHCForm } from "@/components/fhc/fhc-form"
+import { FHCFaq } from "@/components/fhc/fhc-faq"
 
 export const metadata = {
   title: "Free Financial Health Check-up | NavaGanga Financial Consultancy",
@@ -13,9 +15,11 @@ export default function FHCPage() {
   return (
     <>
       <Navigation />
-      <main className="pt-20">
+      <main>
         <FHCHero />
+        <WhatYouGet />
         <FHCForm />
+        <FHCFaq />
       </main>
       <Footer />
     </>

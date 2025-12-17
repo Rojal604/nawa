@@ -3,23 +3,23 @@ import { Footer } from "@/components/footer"
 import { AboutHero } from "@/components/about/about-hero"
 import { BrandStory } from "@/components/about/brand-story"
 import { ProcessSection } from "@/components/about/process-section"
-import { ContactCTA } from "@/components/about/contact-cta"
+import { FounderStory } from "@/components/about/founder-story"
 
 export const metadata = {
   title: "About Us | NavaGanga Financial Consultancy",
   description:
-    "Learn about NavaGanga Financial Consultancy - 5+ years of experience guiding 500+ Pokhara families toward financial freedom. Based in Amarsingh Chowk, Pokhara.",
+    "We are Financial Doctors for families in Pokhara. Licensed & regulated financial advice for Insurance, Mutual Funds, and Retirement.",
 }
 
 export default function AboutPage() {
   return (
     <>
       <Navigation />
-      <main className="pt-20">
+      <main>
         <AboutHero />
         <BrandStory />
         <ProcessSection />
-        <ContactCTA />
+        <FounderStory />
       </main>
       <Footer />
     </>
