@@ -18,12 +18,13 @@ export function FounderStory() {
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}
                         className="relative mx-auto lg:mx-0"
                     >
                         <div className="w-full max-w-md aspect-[3/4] rounded-3xl overflow-hidden border-4 border-white/10 relative shadow-2xl">
                             <Image src={getAssetPath("/founder-professional.png")} alt="Founder of NavaGanga" fill className="object-cover" />
                         </div>
-                        <div className="absolute -bottom-6 -right-6 w-48 bg-accent p-6 rounded-2xl shadow-xl hidden sm:block">
+                        <div className="absolute -bottom-4 right-4 sm:-bottom-6 sm:-right-6 w-40 sm:w-48 bg-accent/95 backdrop-blur shadow-xl p-4 sm:p-6 rounded-2xl border border-white/10">
                             <p className="font-heading font-bold text-2xl text-white">Founder</p>
                             <p className="text-white/80 text-sm">NavaGanga Financial Consultancy</p>
                         </div>
