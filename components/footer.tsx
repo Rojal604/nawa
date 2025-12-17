@@ -38,7 +38,7 @@ export function Footer() {
   ]
 
   return (
-    <footer className="relative bg-gradient-to-br from-[#0A1628] via-[#0D1B2E] to-[#0A1628] text-white pb-24 lg:pb-0">
+    <footer className="relative bg-gradient-to-br from-[#0A1628] via-[#0D1B2E] to-[#0A1628] text-white pb-6 lg:pb-0">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] animate-pulse" />
