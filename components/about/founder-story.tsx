@@ -14,13 +14,7 @@ export function FounderStory() {
 
                 <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
                     {/* Photo */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.6 }}
-                        viewport={{ once: true }}
-                        className="relative mx-auto lg:mx-0"
-                    >
+                    <div className="relative mx-auto lg:mx-0">
                         <div className="w-full max-w-md aspect-[3/4] rounded-3xl overflow-hidden border-4 border-white/10 relative shadow-2xl">
                             <Image src={getAssetPath("/founder-professional.png")} alt="Founder of NavaGanga" fill className="object-cover" />
                         </div>
@@ -28,7 +22,7 @@ export function FounderStory() {
                             <p className="font-heading font-bold text-2xl text-white">Founder</p>
                             <p className="text-white/80 text-sm">NavaGanga Financial Consultancy</p>
                         </div>
-                    </motion.div>
+                    </div>
 
                     {/* Content */}
                     <motion.div
