@@ -55,7 +55,7 @@ export function Navigation() {
             <Link href="/" className="group relative flex items-center gap-3">
               <div className="relative w-12 h-12 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center overflow-hidden p-0.5 shadow-lg shadow-black/5 group-hover:scale-105 transition-transform duration-300">
                 <Image
-                  src={getAssetPath("/logo.jpeg")}
+                  src="/logo.jpeg"
                   alt="NavaGanga Logo"
                   width={48}
                   height={48}

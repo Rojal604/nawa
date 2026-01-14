@@ -105,7 +105,7 @@ export function HeroSection() {
               {/* Main Image Container */}
               <div className="relative w-full h-full rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white dark:border-white/10">
                 <Image
-                  src={getAssetPath("/hero-family.png")}
+                  src="/hero-family.png"
                   alt="Happy Nepali Family Planning Finances"
                   fill
                   className="object-cover"
