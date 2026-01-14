@@ -1,11 +1,32 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useCallback } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { Send } from "lucide-react"
+import { Send, RefreshCw, ShieldCheck } from "lucide-react"
+
+// Generate random math captcha
+function generateCaptcha() {
+    const num1 = Math.floor(Math.random() * 10) + 1
+    const num2 = Math.floor(Math.random() * 10) + 1
+    const operators = ['+', '-'] as const
+    const operator = operators[Math.floor(Math.random() * operators.length)]
+
+    let answer: number
+    if (operator === '+') {
+        answer = num1 + num2
+    } else {
+        // Ensure positive result for subtraction
+        const larger = Math.max(num1, num2)
+        const smaller = Math.min(num1, num2)
+        answer = larger - smaller
+        return { question: `${larger} ${operator} ${smaller}`, answer }
+    }
+
+    return { question: `${num1} ${operator} ${num2}`, answer }
+}
 
 export function ContactForm() {
     const [formData, setFormData] = useState({
@@ -17,6 +38,22 @@ export function ContactForm() {
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
+    // Captcha state
+    const [captcha, setCaptcha] = useState({ question: '', answer: 0 })
+    const [captchaInput, setCaptchaInput] = useState('')
+    const [captchaError, setCaptchaError] = useState(false)
+
+    // Generate captcha on mount
+    const refreshCaptcha = useCallback(() => {
+        setCaptcha(generateCaptcha())
+        setCaptchaInput('')
+        setCaptchaError(false)
+    }, [])
+
+    useEffect(() => {
+        refreshCaptcha()
+    }, [refreshCaptcha])
+
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData(prev => ({
             ...prev,
@@ -24,10 +61,22 @@ export function ContactForm() {
         }))
     }
 
+    // Handle phone input - only allow numbers, max 10 digits
+    const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value.replace(/\D/g, '') // Remove non-digits
+        if (value.length <= 10) {
+            setFormData(prev => ({
+                ...prev,
+                phone: value
+            }))
+        }
+    }
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
         setIsSubmitting(true)
         setSubmitStatus('idle')
+        setCaptchaError(false)
 
         // Basic validation
         if (!formData.name || !formData.email || !formData.message) {
@@ -36,11 +85,26 @@ export function ContactForm() {
             return
         }
 
-        try {
-            // Simulate form submission
-            await new Promise(resolve => setTimeout(resolve, 1500))
+        // Captcha validation
+        if (parseInt(captchaInput) !== captcha.answer) {
+            setCaptchaError(true)
+            setIsSubmitting(false)
+            refreshCaptcha()
+            return
+        }
 
-            console.log('Contact form submitted:', formData)
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            })
+
+            if (!response.ok) {
+                throw new Error('Failed to send message')
+            }
 
             setSubmitStatus('success')
 
@@ -53,6 +117,7 @@ export function ContactForm() {
                     message: ''
                 })
                 setSubmitStatus('idle')
+                refreshCaptcha()
             }, 3000)
 
         } catch (error) {
@@ -104,11 +169,14 @@ export function ContactForm() {
                             <Input
                                 id="phone"
                                 type="tel"
-                                placeholder="+977"
+                                inputMode="numeric"
+                                placeholder="9812345678"
                                 value={formData.phone}
-                                onChange={handleInputChange}
+                                onChange={handlePhoneChange}
+                                maxLength={10}
                                 className="h-12"
                             />
+                            <p className="text-xs text-muted-foreground">Numbers only, max 10 digits</p>
                         </div>
 
                         <div className="space-y-2">
@@ -122,6 +190,45 @@ export function ContactForm() {
                                 rows={6}
                                 className="resize-none"
                             />
+                        </div>
+
+                        {/* Security Captcha */}
+                        <div className="space-y-3 p-4 bg-secondary/30 rounded-xl border border-border">
+                            <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
+                                <ShieldCheck className="w-4 h-4 text-accent" />
+                                Security Verification
+                            </div>
+                            <div className="flex items-center gap-4">
+                                <div className="flex items-center gap-3 bg-background px-4 py-2.5 rounded-lg border border-border">
+                                    <span className="text-lg font-bold text-foreground">{captcha.question} = ?</span>
+                                </div>
+                                <Input
+                                    type="text"
+                                    inputMode="numeric"
+                                    placeholder="Answer"
+                                    value={captchaInput}
+                                    onChange={(e) => {
+                                        const val = e.target.value.replace(/\D/g, '')
+                                        setCaptchaInput(val)
+                                        setCaptchaError(false)
+                                    }}
+                                    className={`h-11 w-24 text-center font-bold ${captchaError ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
+                                    required
+                                />
+                                <Button
+                                    type="button"
+                                    variant="ghost"
+                                    size="icon"
+                                    onClick={refreshCaptcha}
+                                    className="h-11 w-11 shrink-0"
+                                    title="Refresh captcha"
+                                >
+                                    <RefreshCw className="w-4 h-4" />
+                                </Button>
+                            </div>
+                            {captchaError && (
+                                <p className="text-sm text-red-500">Incorrect answer. Please try again.</p>
+                            )}
                         </div>
 
                         <Button

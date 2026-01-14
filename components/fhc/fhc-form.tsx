@@ -100,10 +100,27 @@ export function FHCForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsProcessing(true)
-    // Simulate API/Processing delay
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    setIsProcessing(false)
-    setIsSubmitted(true)
+
+    try {
+      const response = await fetch('/api/fhc', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form')
+      }
+
+      setIsSubmitted(true)
+    } catch (error) {
+      console.error('FHC form submission error:', error)
+      alert('Something went wrong. Please try again or contact us directly.')
+    } finally {
+      setIsProcessing(false)
+    }
   }
 
   if (isSubmitted) {
